@@ -35,13 +35,13 @@ const createComments = () => {
   const indexNameArr = getRandomInteger (0, nameArray.length - 1);
 
   // Разобьем комментарии с разделителем - !
-  massageArray.splice(0, 1, massageArray[0].split('! ')[0],massageArray[0].split('! ')[1]);
+  messageArray.splice(0, 1, messageArray[0].split('! ')[0],messageArray[0].split('! ')[1]);
   return () => {
     const comment = {};
     const idAvatar = getRandomInteger (1, 6);
     comment.id = id;
     comment.avatar = `img/avatar-${idAvatar()}.svg`;
-    comment.message = `${messageArray[indexMessageArr()]}. ${massageArray[indexMessageArr()]}`;
+    comment.message = `${messageArray[indexMessageArr()]}. ${messageArray[indexMessageArr()]}`;
     comment.name = `${nameArray[indexNameArr()]}`;
     id++;
     return comment;
