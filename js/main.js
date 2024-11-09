@@ -1,6 +1,14 @@
 import {numLikes,createComments,numComments} from './util.js';
 import { CREATED_PHOTO } from './data.js';
 import './thumbnails.js';
+import {openBigPicture} from './render-photo.js'
+
+container.addEventListener('click', (evt) => {
+  const currentPictureNode = evt.target.closest('.picture');
+  if (currentPictureNode) {
+    openBigPicture(currentPictureNode.dataSet.pictureId);
+  }
+});
 
 const createPhoto = () => {
   let id = 1;
@@ -20,5 +28,5 @@ const createPhoto = () => {
 
 
 export const photoArray = Array.from ({length: CREATED_PHOTO}, createPhoto());
-console.log(photoArray);
+
 
