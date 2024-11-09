@@ -5,12 +5,14 @@ const commentsCountNode = bigPicturesNode.querySelector('.social__comment-count'
 const commentsLoaderNode = bigPicturesNode.querySelector('.social__comment-loader');
 const bigPictureCancelNode = bigPicturesNode.querySelector('.big-picture__cancel');
 
-const onBigPictureCancelClick = () => {
+const onBigPictureCancelClick = (evt) => {
+  evt.preventDefault();
   closeBigPicture();
 }
 
 const onEscKeydown = (evt) => {
   if (evt.key === 'Escape') {
+    evt.preventDefault();
     closeBigPicture();
   }
 };

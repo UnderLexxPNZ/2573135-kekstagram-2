@@ -5,7 +5,9 @@ import {openBigPicture} from './render-photo.js'
 
 container.addEventListener('click', (evt) => {
   const currentPictureNode = evt.target.closest('.picture');
+
   if (currentPictureNode) {
+    evt.preventDefault();
     openBigPicture(currentPictureNode.dataSet.pictureId);
   }
 });
